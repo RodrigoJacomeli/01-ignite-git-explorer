@@ -32,10 +32,10 @@ module.exports = {
         use: "babel-loader", // Utilizar os loader para conseguir ler os arquivos JSX.
       },
       {
-        test: /\.css$/, // Expressão regular para verificar os arquivos terminados em .css.
+        test: /\.scss$/, // Expressão regular para verificar os arquivos terminados em .scss.
         exclude: /node_modules/, // Excluir a pasta node_modules, estes arquivos já estão preparados para produção.
-        use: ["style-loader", "css-loader"], // Utilizar os loader para conseguir ler os arquivos de estilo.
-      }
+        use: ["style-loader", "css-loader", "sass-loader"], // Utilizar os loader para conseguir ler os arquivos de estilo.
+      },
     ],
   },
 };

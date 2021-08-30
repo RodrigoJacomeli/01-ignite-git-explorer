@@ -1,5 +1,4 @@
-import React from 'react'
+export function App() {
 
-export function App () {
-  return <h1>Hello Ignite</h1>
+  return <h1>Hello React</h1>
 }

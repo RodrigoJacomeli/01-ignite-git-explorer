@@ -29,8 +29,13 @@ module.exports = {
       {
         test: /\.jsx$/, // Expressão regular para verificar se os arquivos terminal com o formatdo .jsx.
         exclude: /node_modules/, // Excluir a pasta node_modules, estes arquivos já estão preparados para produção.
-        use: "babel-loader",
+        use: "babel-loader", // Utilizar os loader para conseguir ler os arquivos JSX.
       },
+      {
+        test: /\.css$/, // Expressão regular para verificar os arquivos terminados em .css.
+        exclude: /node_modules/, // Excluir a pasta node_modules, estes arquivos já estão preparados para produção.
+        use: ["style-loader", "css-loader"], // Utilizar os loader para conseguir ler os arquivos de estilo.
+      }
     ],
   },
 };

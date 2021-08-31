@@ -15,10 +15,10 @@ export function Counter() {
     <div>
       <h2>{counter}</h2>
       <button type="button" onClick={handleIncrement}>
-        Increment
+        Increment + 
       </button>
       <button type="button" onClick={handleDecrement}>
-        Decrement
+        Decrement -
       </button>
     </div>
   );

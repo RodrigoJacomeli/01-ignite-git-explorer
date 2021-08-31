@@ -7,13 +7,13 @@ const isDevelopment = process.env.NODE_ENV !== "production";
 module.exports = {
   mode: isDevelopment ? "development" : "production", // Definindo o modo de build
   devtool: isDevelopment ? "eval-source-map" : "source-map", // Configurando o source-map para erros, serem localizado na linha correta do código.
-  entry: path.resolve(__dirname, "src", "index.jsx"), // Caminho do arquivo principal do projeto.
+  entry: path.resolve(__dirname, "src", "index.tsx"), // Caminho do arquivo principal do projeto.
   output: {
     path: path.resolve(__dirname, "dist"), // Caminho de saida do arquivo buildado.
     filename: "bundle.js", // Nome do arquivo buildado.
   },
   resolve: {
-    extensions: [".js", ".jsx"], // Extensões que deverá passar pelo webpack e entender importações sem formato.
+    extensions: [".js", ".jsx", ".ts", ".tsx"], // Extensões que deverá passar pelo webpack e entender importações sem formato.
   },
   devServer: {
     // HotRefresh do webpack
@@ -32,7 +32,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx$/, // Expressão regular para verificar se os arquivos terminal com o formatdo .jsx.
+        test: /\.(j|t)sx$/, // Expressão regular para verificar se os arquivos terminal com o formatdo .jsx.
         exclude: /node_modules/, // Excluir a pasta node_modules, estes arquivos já estão preparados para produção.
         use: {
           loader: 'babel-loader',
